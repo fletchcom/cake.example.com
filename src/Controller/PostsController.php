@@ -16,6 +16,12 @@ class PostsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+
+    public function initialize(): void
+    {
+        parent::initialize();
+    }
+    
     public function index()
     {
         $this->paginate = [
@@ -33,11 +39,7 @@ class PostsController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function initialize(): void
-{
-    parent::initialize();
-}
-
+    
 public function view($id = null)
     {
         $post = $this->Posts->get($id, [
